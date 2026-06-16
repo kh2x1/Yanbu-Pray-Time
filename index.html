@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مواقيت الصلاة — ينبع النخل ١٤٤٨ هـ</title>
+<meta name="description" content="تقويم مواقيت الصلاة والإقامة لمحافظة ينبع النخل لعام 1448 هجري، محسوب وفق طريقة أم القرى.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#0E1A26; --panel:#13242F; --panel2:#162B38;
+  --sand:#ECE3CF; --sand-dim:#B6B09C; --muted:#76858F;
+  --line:rgba(236,227,207,.13); --line-soft:rgba(236,227,207,.07);
+  --palm:#46A085; --palm-deep:#2C6957;
+  --amber:#E3A63E; --dusk:#CF7159; --indigo:#3A4E86;
+  --fri:rgba(227,166,62,.10); --today:rgba(70,160,133,.14);
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--night); color:var(--sand);
+  font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;
+  line-height:1.6; -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:
+    radial-gradient(1100px 520px at 78% -8%, rgba(227,166,62,.13), transparent 60%),
+    radial-gradient(900px 600px at 10% 6%, rgba(58,78,134,.18), transparent 62%);
+}
+.wrap{position:relative; z-index:1; max-width:1060px; margin:0 auto; padding:0 20px}
+.num{font-family:"IBM Plex Mono",monospace; font-variant-numeric:tabular-nums; font-feature-settings:"tnum"}
+
+/* ---------- Hero ---------- */
+header{padding:54px 0 8px; text-align:center}
+.eyebrow{
+  display:inline-flex; align-items:center; gap:9px; font-size:.78rem;
+  letter-spacing:.04em; color:var(--sand-dim);
+  border:1px solid var(--line); border-radius:999px; padding:6px 15px;
+  background:rgba(255,255,255,.018);
+}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--palm);box-shadow:0 0 10px var(--palm)}
+h1{
+  font-family:"Aref Ruqaa",serif; font-weight:700;
+  font-size:clamp(3.2rem,11vw,6rem); line-height:1; margin:.18em 0 .06em;
+  background:linear-gradient(160deg,#F6ECD4 0%,#E3A63E 55%,#CF7159 100%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  padding-bottom:.06em;
+}
+.tagline{color:var(--sand-dim); font-size:clamp(1rem,2.6vw,1.25rem); font-weight:300}
+.tagline b{color:var(--sand); font-weight:600}
+
+/* ---------- Today card ---------- */
+.today{
+  margin:30px 0 8px; background:linear-gradient(180deg,var(--panel2),var(--panel));
+  border:1px solid var(--line); border-radius:var(--r);
+  box-shadow:0 24px 60px -34px rgba(0,0,0,.7); overflow:hidden;
+}
+.today-top{
+  display:flex; flex-wrap:wrap; gap:14px; justify-content:space-between; align-items:center;
+  padding:18px 22px; border-bottom:1px solid var(--line-soft);
+}
+.t-date .ar-date{font-size:1.18rem; font-weight:600}
+.t-date .g-date{color:var(--muted); font-size:.86rem}
+.next{display:flex; align-items:center; gap:16px; text-align:left}
+.next .lbl{color:var(--sand-dim); font-size:.74rem; letter-spacing:.03em}
+.next .nm{font-size:1.05rem; font-weight:600; color:var(--amber)}
+.next .cd{font-size:1.9rem; font-weight:500; color:var(--sand); line-height:1.05}
+.next .ringwrap{position:relative; width:46px; height:46px; flex:none}
+.next svg{transform:rotate(-90deg)}
+.next .ring-bg{stroke:var(--line); fill:none; stroke-width:4}
+.next .ring-fg{stroke:var(--palm); fill:none; stroke-width:4; stroke-linecap:round; transition:stroke-dashoffset 1s linear}
+
+/* day arc */
+.arc-pad{padding:30px 26px 14px}
+.arc{
+  position:relative; height:54px; border-radius:10px;
+  background:linear-gradient(90deg,
+    #0c1a2c 0%, #18254c 16%, #e79f68 24%, #f3d488 49%,
+    #e0a23b 65%, #cf7159 79%, #2a2752 89%, #0c1a2c 100%);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06), inset 0 -10px 22px -10px rgba(0,0,0,.5);
+}
+.mk{position:absolute; top:0; height:100%; transform:translateX(-50%)}
+.mk i{position:absolute; top:0; left:50%; transform:translateX(-50%); width:2px; height:100%;
+  background:rgba(12,18,30,.5)}
+.mk .ml{position:absolute; top:calc(100% + 6px); left:50%; transform:translateX(-50%);
+  font-size:.64rem; color:var(--sand-dim); white-space:nowrap}
+.sun{position:absolute; top:50%; left:50%; width:16px; height:16px; border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 40% 35%,#fff,#ffd98a 45%,#e3a63e 75%);
+  box-shadow:0 0 14px 4px rgba(255,214,120,.6); z-index:3}
+.nowline{position:absolute; top:-6px; bottom:-6px; left:50%; width:1px; transform:translateX(-50%); background:rgba(255,255,255,.45); z-index:2}
+
+/* chips */
+.chips{display:grid; grid-template-columns:repeat(6,1fr); gap:8px; padding:26px 18px 22px}
+.chip{
+  border:1px solid var(--line); border-radius:12px; padding:11px 6px 10px; text-align:center;
+  background:rgba(255,255,255,.015); transition:border-color .3s, background .3s, transform .3s;
+}
+.chip .cnm{font-size:.78rem; color:var(--sand-dim); margin-bottom:3px}
+.chip .cad{font-size:1.18rem; font-weight:600}
+.chip .ciq{font-size:.68rem; color:var(--muted); margin-top:1px}
+.chip.shuruq .cad{color:var(--sand-dim); font-weight:500}
+.chip.active{
+  border-color:var(--palm); background:rgba(70,160,133,.12);
+  box-shadow:0 0 0 1px var(--palm), 0 10px 26px -16px var(--palm);
+}
+.chip.active .cnm{color:var(--palm)}
+
+/* ---------- Month nav ---------- */
+.monthbar{
+  position:sticky; top:0; z-index:20; margin:34px 0 0; padding:12px 0;
+  background:linear-gradient(180deg,var(--night) 70%,transparent);
+  backdrop-filter:blur(4px);
+}
+.months{display:flex; gap:7px; overflow-x:auto; padding-bottom:4px; scrollbar-width:thin}
+.months::-webkit-scrollbar{height:5px}
+.months::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+.mtab{
+  flex:none; border:1px solid var(--line); background:transparent; color:var(--sand-dim);
+  font-family:inherit; font-size:.86rem; padding:8px 15px; border-radius:999px; cursor:pointer;
+  white-space:nowrap; transition:all .2s;
+}
+.mtab:hover{color:var(--sand); border-color:var(--sand-dim)}
+.mtab.active{background:var(--sand); color:var(--night); border-color:var(--sand); font-weight:600}
+.mtab:focus-visible{outline:2px solid var(--palm); outline-offset:2px}
+
+/* ---------- Table ---------- */
+.tablecard{
+  margin-top:8px; border:1px solid var(--line); border-radius:var(--r); overflow:hidden;
+  background:var(--panel);
+}
+.mhead{display:flex; align-items:baseline; gap:12px; padding:16px 20px 4px}
+.mhead h2{font-family:"Aref Ruqaa",serif; font-size:1.7rem; font-weight:700; color:var(--sand)}
+.mhead .mrange{color:var(--muted); font-size:.82rem}
+.scroller{overflow-x:auto}
+table{width:100%; border-collapse:collapse; min-width:620px}
+thead th{
+  font-size:.74rem; font-weight:600; color:var(--sand-dim); text-align:center;
+  padding:12px 6px; border-bottom:1px solid var(--line); background:rgba(255,255,255,.022);
+  position:sticky; top:0;
+}
+tbody td{padding:9px 6px; text-align:center; border-bottom:1px solid var(--line-soft); font-size:.9rem}
+tbody tr:last-child td{border-bottom:none}
+.c-h{color:var(--amber); font-weight:600; width:42px}
+.c-wd{color:var(--sand-dim); width:74px; font-size:.82rem}
+.c-g{color:var(--muted); width:96px; font-size:.8rem; white-space:nowrap}
+.t .adhan{display:block; font-weight:600}
+.t .iq{display:block; font-size:.66rem; color:var(--muted); margin-top:1px}
+.t.shuruq .adhan{color:var(--sand-dim); font-weight:400}
+tr.fri{background:var(--fri)}
+tr.fri .c-wd{color:var(--amber)}
+tr.today{background:var(--today); box-shadow:inset 3px 0 0 var(--palm)}
+tr.today .c-h{color:var(--palm)}
+
+/* ---------- Footer ---------- */
+footer{margin:40px 0 56px; color:var(--muted); font-size:.82rem}
+.fgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;
+  border-top:1px solid var(--line); padding-top:24px}
+.fgrid h3{color:var(--sand-dim); font-size:.78rem; font-weight:600; margin-bottom:7px; letter-spacing:.02em}
+.fgrid p{line-height:1.7}
+.iqlist{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px}
+.iqlist span{border:1px solid var(--line); border-radius:7px; padding:2px 9px; font-size:.76rem; color:var(--sand-dim)}
+.fnote{margin-top:22px; text-align:center; color:var(--muted); font-size:.78rem; line-height:1.7}
+.fnote b{color:var(--sand-dim); font-weight:600}
+
+@media(max-width:680px){
+  header{padding:40px 0 4px}
+  .arc-pad{padding:24px 16px 10px}
+  .chips{grid-template-columns:repeat(3,1fr); padding:20px 14px}
+  .mk .ml{font-size:.56rem}
+  .next .cd{font-size:1.5rem}
+  .today-top{padding:15px 16px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important; animation:none!important; scroll-behavior:auto}
+}
+/* entrance */
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.28s}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow rise"><span class="dot"></span> تقويم أمّ القرى · منطقة المدينة المنورة</span>
+    <h1 class="rise d1">ينبع النخل</h1>
+    <p class="tagline rise d2">مواقيت الصلاة والإقامة لعام <b>١٤٤٨ هـ</b></p>
+  </header>
+
+  <section class="today rise d3" id="todayCard">
+    <div class="today-top">
+      <div class="t-date">
+        <div class="ar-date" id="arDate">—</div>
+        <div class="g-date" id="gDate">—</div>
+      </div>
+      <div class="next">
+        <div>
+          <div class="lbl">الصلاة القادمة</div>
+          <div class="nm" id="nextName">—</div>
+        </div>
+        <div class="cd num" id="countdown">—:—:—</div>
+        <div class="ringwrap">
+          <svg width="46" height="46" viewBox="0 0 46 46">
+            <circle class="ring-bg" cx="23" cy="23" r="20"></circle>
+            <circle class="ring-fg" id="ring" cx="23" cy="23" r="20"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="arc-pad">
+      <div class="arc" id="arc">
+        <div class="nowline" id="nowline" style="left:50%"></div>
+        <div class="sun" id="sun" style="left:50%"></div>
+      </div>
+    </div>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <nav class="monthbar"><div class="months" id="months"></div></nav>
+
+  <section class="tablecard">
+    <div class="mhead"><h2 id="mTitle">—</h2><span class="mrange" id="mRange"></span></div>
+    <div class="scroller">
+      <table>
+        <thead><tr>
+          <th>الهجري</th><th>اليوم</th><th>الميلادي</th>
+          <th>الفجر</th><th>الشروق</th><th>الظهر</th><th>العصر</th><th>المغرب</th><th>العشاء</th>
+        </tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fgrid">
+      <div>
+        <h3>طريقة الحساب</h3>
+        <p>أمّ القرى — زاوية الفجر ٤.٥°١، والعشاء بعد المغرب بـ ٩٠ دقيقة (١٢٠ في رمضان). الأوقات محسوبة فلكيًا لإحداثيات المحافظة.</p>
+      </div>
+      <div>
+        <h3>الموقع</h3>
+        <p>ينبع النخل · ٢٤٫٣٢° شمالًا ، ٣٨٫٤٣° شرقًا<br>المنطقة الزمنية: <span class="num">UTC+3</span></p>
+      </div>
+      <div>
+        <h3>فروق الإقامة (أذان ← إقامة)</h3>
+        <div class="iqlist" id="iqList"></div>
+      </div>
+    </div>
+    <p class="fnote">الأوقات استدلالية للتنظيم الشخصي — <b>اعتمد دائمًا أذان مسجدك</b>، فقد تختلف الإقامة دقائق من مسجد لآخر.</p>
+  </footer>
+</div>
+
+<script>
+const DATA = [{"hm":1,"hd":1,"g":"2026-06-16","wd":1,"ram":0,"fajr":247,"shuruq":338,"dhuhr":747,"asr":947,"maghrib":1156,"isha":1246},{"hm":1,"hd":2,"g":"2026-06-17","wd":2,"ram":0,"fajr":247,"shuruq":338,"dhuhr":747,"asr":947,"maghrib":1156,"isha":1246},{"hm":1,"hd":3,"g":"2026-06-18","wd":3,"ram":0,"fajr":247,"shuruq":338,"dhuhr":747,"asr":947,"maghrib":1157,"isha":1247},{"hm":1,"hd":4,"g":"2026-06-19","wd":4,"ram":0,"fajr":247,"shuruq":338,"dhuhr":748,"asr":948,"maghrib":1157,"isha":1247},{"hm":1,"hd":5,"g":"2026-06-20","wd":5,"ram":0,"fajr":247,"shuruq":339,"dhuhr":748,"asr":948,"maghrib":1157,"isha":1247},{"hm":1,"hd":6,"g":"2026-06-21","wd":6,"ram":0,"fajr":247,"shuruq":339,"dhuhr":748,"asr":948,"maghrib":1157,"isha":1247},{"hm":1,"hd":7,"g":"2026-06-22","wd":0,"ram":0,"fajr":248,"shuruq":339,"dhuhr":748,"asr":948,"maghrib":1158,"isha":1248},{"hm":1,"hd":8,"g":"2026-06-23","wd":1,"ram":0,"fajr":248,"shuruq":339,"dhuhr":749,"asr":948,"maghrib":1158,"isha":1248},{"hm":1,"hd":9,"g":"2026-06-24","wd":2,"ram":0,"fajr":248,"shuruq":339,"dhuhr":749,"asr":949,"maghrib":1158,"isha":1248},{"hm":1,"hd":10,"g":"2026-06-25","wd":3,"ram":0,"fajr":249,"shuruq":340,"dhuhr":749,"asr":949,"maghrib":1158,"isha":1248},{"hm":1,"hd":11,"g":"2026-06-26","wd":4,"ram":0,"fajr":249,"shuruq":340,"dhuhr":749,"asr":949,"maghrib":1158,"isha":1248},{"hm":1,"hd":12,"g":"2026-06-27","wd":5,"ram":0,"fajr":249,"shuruq":340,"dhuhr":749,"asr":949,"maghrib":1158,"isha":1248},{"hm":1,"hd":13,"g":"2026-06-28","wd":6,"ram":0,"fajr":250,"shuruq":341,"dhuhr":750,"asr":950,"maghrib":1158,"isha":1248},{"hm":1,"hd":14,"g":"2026-06-29","wd":0,"ram":0,"fajr":250,"shuruq":341,"dhuhr":750,"asr":950,"maghrib":1159,"isha":1249},{"hm":1,"hd":15,"g":"2026-06-30","wd":1,"ram":0,"fajr":250,"shuruq":341,"dhuhr":750,"asr":950,"maghrib":1159,"isha":1249},{"hm":1,"hd":16,"g":"2026-07-01","wd":2,"ram":0,"fajr":251,"shuruq":342,"dhuhr":750,"asr":950,"maghrib":1159,"isha":1249},{"hm":1,"hd":17,"g":"2026-07-02","wd":3,"ram":0,"fajr":251,"shuruq":342,"dhuhr":750,"asr":951,"maghrib":1159,"isha":1249},{"hm":1,"hd":18,"g":"2026-07-03","wd":4,"ram":0,"fajr":252,"shuruq":342,"dhuhr":751,"asr":951,"maghrib":1159,"isha":1249},{"hm":1,"hd":19,"g":"2026-07-04","wd":5,"ram":0,"fajr":252,"shuruq":343,"dhuhr":751,"asr":951,"maghrib":1159,"isha":1249},{"hm":1,"hd":20,"g":"2026-07-05","wd":6,"ram":0,"fajr":253,"shuruq":343,"dhuhr":751,"asr":952,"maghrib":1159,"isha":1249},{"hm":1,"hd":21,"g":"2026-07-06","wd":0,"ram":0,"fajr":253,"shuruq":343,"dhuhr":751,"asr":952,"maghrib":1159,"isha":1249},{"hm":1,"hd":22,"g":"2026-07-07","wd":1,"ram":0,"fajr":254,"shuruq":344,"dhuhr":751,"asr":952,"maghrib":1159,"isha":1249},{"hm":1,"hd":23,"g":"2026-07-08","wd":2,"ram":0,"fajr":254,"shuruq":344,"dhuhr":751,"asr":952,"maghrib":1158,"isha":1248},{"hm":1,"hd":24,"g":"2026-07-09","wd":3,"ram":0,"fajr":255,"shuruq":345,"dhuhr":752,"asr":953,"maghrib":1158,"isha":1248},{"hm":1,"hd":25,"g":"2026-07-10","wd":4,"ram":0,"fajr":255,"shuruq":345,"dhuhr":752,"asr":953,"maghrib":1158,"isha":1248},{"hm":1,"hd":26,"g":"2026-07-11","wd":5,"ram":0,"fajr":256,"shuruq":345,"dhuhr":752,"asr":953,"maghrib":1158,"isha":1248},{"hm":1,"hd":27,"g":"2026-07-12","wd":6,"ram":0,"fajr":256,"shuruq":346,"dhuhr":752,"asr":954,"maghrib":1158,"isha":1248},{"hm":1,"hd":28,"g":"2026-07-13","wd":0,"ram":0,"fajr":257,"shuruq":346,"dhuhr":752,"asr":954,"maghrib":1158,"isha":1248},{"hm":1,"hd":29,"g":"2026-07-14","wd":1,"ram":0,"fajr":257,"shuruq":347,"dhuhr":752,"asr":954,"maghrib":1157,"isha":1247},{"hm":2,"hd":1,"g":"2026-07-15","wd":2,"ram":0,"fajr":258,"shuruq":347,"dhuhr":752,"asr":954,"maghrib":1157,"isha":1247},{"hm":2,"hd":2,"g":"2026-07-16","wd":3,"ram":0,"fajr":259,"shuruq":348,"dhuhr":752,"asr":955,"maghrib":1157,"isha":1247},{"hm":2,"hd":3,"g":"2026-07-17","wd":4,"ram":0,"fajr":259,"shuruq":348,"dhuhr":752,"asr":955,"maghrib":1157,"isha":1247},{"hm":2,"hd":4,"g":"2026-07-18","wd":5,"ram":0,"fajr":260,"shuruq":349,"dhuhr":753,"asr":955,"maghrib":1156,"isha":1246},{"hm":2,"hd":5,"g":"2026-07-19","wd":6,"ram":0,"fajr":261,"shuruq":349,"dhuhr":753,"asr":955,"maghrib":1156,"isha":1246},{"hm":2,"hd":6,"g":"2026-07-20","wd":0,"ram":0,"fajr":261,"shuruq":349,"dhuhr":753,"asr":956,"maghrib":1156,"isha":1246},{"hm":2,"hd":7,"g":"2026-07-21","wd":1,"ram":0,"fajr":262,"shuruq":350,"dhuhr":753,"asr":956,"maghrib":1155,"isha":1245},{"hm":2,"hd":8,"g":"2026-07-22","wd":2,"ram":0,"fajr":262,"shuruq":350,"dhuhr":753,"asr":956,"maghrib":1155,"isha":1245},{"hm":2,"hd":9,"g":"2026-07-23","wd":3,"ram":0,"fajr":263,"shuruq":351,"dhuhr":753,"asr":956,"maghrib":1155,"isha":1245},{"hm":2,"hd":10,"g":"2026-07-24","wd":4,"ram":0,"fajr":264,"shuruq":351,"dhuhr":753,"asr":957,"maghrib":1154,"isha":1244},{"hm":2,"hd":11,"g":"2026-07-25","wd":5,"ram":0,"fajr":264,"shuruq":352,"dhuhr":753,"asr":957,"maghrib":1154,"isha":1244},{"hm":2,"hd":12,"g":"2026-07-26","wd":6,"ram":0,"fajr":265,"shuruq":352,"dhuhr":753,"asr":957,"maghrib":1153,"isha":1243},{"hm":2,"hd":13,"g":"2026-07-27","wd":0,"ram":0,"fajr":266,"shuruq":353,"dhuhr":753,"asr":957,"maghrib":1153,"isha":1243},{"hm":2,"hd":14,"g":"2026-07-28","wd":1,"ram":0,"fajr":266,"shuruq":353,"dhuhr":753,"asr":957,"maghrib":1152,"isha":1242},{"hm":2,"hd":15,"g":"2026-07-29","wd":2,"ram":0,"fajr":267,"shuruq":354,"dhuhr":753,"asr":957,"maghrib":1152,"isha":1242},{"hm":2,"hd":16,"g":"2026-07-30","wd":3,"ram":0,"fajr":268,"shuruq":354,"dhuhr":753,"asr":958,"maghrib":1151,"isha":1241},{"hm":2,"hd":17,"g":"2026-07-31","wd":4,"ram":0,"fajr":268,"shuruq":354,"dhuhr":753,"asr":958,"maghrib":1151,"isha":1241},{"hm":2,"hd":18,"g":"2026-08-01","wd":5,"ram":0,"fajr":269,"shuruq":355,"dhuhr":753,"asr":958,"maghrib":1150,"isha":1240},{"hm":2,"hd":19,"g":"2026-08-02","wd":6,"ram":0,"fajr":270,"shuruq":355,"dhuhr":753,"asr":958,"maghrib":1149,"isha":1239},{"hm":2,"hd":20,"g":"2026-08-03","wd":0,"ram":0,"fajr":270,"shuruq":356,"dhuhr":752,"asr":958,"maghrib":1149,"isha":1239},{"hm":2,"hd":21,"g":"2026-08-04","wd":1,"ram":0,"fajr":271,"shuruq":356,"dhuhr":752,"asr":958,"maghrib":1148,"isha":1238},{"hm":2,"hd":22,"g":"2026-08-05","wd":2,"ram":0,"fajr":272,"shuruq":357,"dhuhr":752,"asr":958,"maghrib":1148,"isha":1238},{"hm":2,"hd":23,"g":"2026-08-06","wd":3,"ram":0,"fajr":272,"shuruq":357,"dhuhr":752,"asr":958,"maghrib":1147,"isha":1237},{"hm":2,"hd":24,"g":"2026-08-07","wd":4,"ram":0,"fajr":273,"shuruq":358,"dhuhr":752,"asr":958,"maghrib":1146,"isha":1236},{"hm":2,"hd":25,"g":"2026-08-08","wd":5,"ram":0,"fajr":274,"shuruq":358,"dhuhr":752,"asr":958,"maghrib":1146,"isha":1236},{"hm":2,"hd":26,"g":"2026-08-09","wd":6,"ram":0,"fajr":274,"shuruq":358,"dhuhr":752,"asr":958,"maghrib":1145,"isha":1235},{"hm":2,"hd":27,"g":"2026-08-10","wd":0,"ram":0,"fajr":275,"shuruq":359,"dhuhr":752,"asr":958,"maghrib":1144,"isha":1234},{"hm":2,"hd":28,"g":"2026-08-11","wd":1,"ram":0,"fajr":276,"shuruq":359,"dhuhr":752,"asr":958,"maghrib":1143,"isha":1233},{"hm":2,"hd":29,"g":"2026-08-12","wd":2,"ram":0,"fajr":276,"shuruq":360,"dhuhr":751,"asr":958,"maghrib":1143,"isha":1233},{"hm":2,"hd":30,"g":"2026-08-13","wd":3,"ram":0,"fajr":277,"shuruq":360,"dhuhr":751,"asr":958,"maghrib":1142,"isha":1232},{"hm":3,"hd":1,"g":"2026-08-14","wd":4,"ram":0,"fajr":277,"shuruq":361,"dhuhr":751,"asr":958,"maghrib":1141,"isha":1231},{"hm":3,"hd":2,"g":"2026-08-15","wd":5,"ram":0,"fajr":278,"shuruq":361,"dhuhr":751,"asr":958,"maghrib":1140,"isha":1230},{"hm":3,"hd":3,"g":"2026-08-16","wd":6,"ram":0,"fajr":279,"shuruq":361,"dhuhr":751,"asr":958,"maghrib":1139,"isha":1229},{"hm":3,"hd":4,"g":"2026-08-17","wd":0,"ram":0,"fajr":279,"shuruq":362,"dhuhr":750,"asr":958,"maghrib":1139,"isha":1229},{"hm":3,"hd":5,"g":"2026-08-18","wd":1,"ram":0,"fajr":280,"shuruq":362,"dhuhr":750,"asr":958,"maghrib":1138,"isha":1228},{"hm":3,"hd":6,"g":"2026-08-19","wd":2,"ram":0,"fajr":281,"shuruq":363,"dhuhr":750,"asr":958,"maghrib":1137,"isha":1227},{"hm":3,"hd":7,"g":"2026-08-20","wd":3,"ram":0,"fajr":281,"shuruq":363,"dhuhr":750,"asr":958,"maghrib":1136,"isha":1226},{"hm":3,"hd":8,"g":"2026-08-21","wd":4,"ram":0,"fajr":282,"shuruq":363,"dhuhr":749,"asr":957,"maghrib":1135,"isha":1225},{"hm":3,"hd":9,"g":"2026-08-22","wd":5,"ram":0,"fajr":282,"shuruq":364,"dhuhr":749,"asr":957,"maghrib":1134,"isha":1224},{"hm":3,"hd":10,"g":"2026-08-23","wd":6,"ram":0,"fajr":283,"shuruq":364,"dhuhr":749,"asr":957,"maghrib":1133,"isha":1223},{"hm":3,"hd":11,"g":"2026-08-24","wd":0,"ram":0,"fajr":283,"shuruq":365,"dhuhr":749,"asr":957,"maghrib":1132,"isha":1222},{"hm":3,"hd":12,"g":"2026-08-25","wd":1,"ram":0,"fajr":284,"shuruq":365,"dhuhr":748,"asr":957,"maghrib":1131,"isha":1221},{"hm":3,"hd":13,"g":"2026-08-26","wd":2,"ram":0,"fajr":284,"shuruq":365,"dhuhr":748,"asr":956,"maghrib":1131,"isha":1221},{"hm":3,"hd":14,"g":"2026-08-27","wd":3,"ram":0,"fajr":285,"shuruq":366,"dhuhr":748,"asr":956,"maghrib":1130,"isha":1220},{"hm":3,"hd":15,"g":"2026-08-28","wd":4,"ram":0,"fajr":286,"shuruq":366,"dhuhr":748,"asr":956,"maghrib":1129,"isha":1219},{"hm":3,"hd":16,"g":"2026-08-29","wd":5,"ram":0,"fajr":286,"shuruq":366,"dhuhr":747,"asr":956,"maghrib":1128,"isha":1218},{"hm":3,"hd":17,"g":"2026-08-30","wd":6,"ram":0,"fajr":287,"shuruq":367,"dhuhr":747,"asr":955,"maghrib":1127,"isha":1217},{"hm":3,"hd":18,"g":"2026-08-31","wd":0,"ram":0,"fajr":287,"shuruq":367,"dhuhr":747,"asr":955,"maghrib":1126,"isha":1216},{"hm":3,"hd":19,"g":"2026-09-01","wd":1,"ram":0,"fajr":288,"shuruq":368,"dhuhr":746,"asr":955,"maghrib":1125,"isha":1215},{"hm":3,"hd":20,"g":"2026-09-02","wd":2,"ram":0,"fajr":288,"shuruq":368,"dhuhr":746,"asr":954,"maghrib":1124,"isha":1214},{"hm":3,"hd":21,"g":"2026-09-03","wd":3,"ram":0,"fajr":289,"shuruq":368,"dhuhr":746,"asr":954,"maghrib":1123,"isha":1213},{"hm":3,"hd":22,"g":"2026-09-04","wd":4,"ram":0,"fajr":289,"shuruq":369,"dhuhr":745,"asr":954,"maghrib":1122,"isha":1212},{"hm":3,"hd":23,"g":"2026-09-05","wd":5,"ram":0,"fajr":290,"shuruq":369,"dhuhr":745,"asr":953,"maghrib":1121,"isha":1211},{"hm":3,"hd":24,"g":"2026-09-06","wd":6,"ram":0,"fajr":290,"shuruq":369,"dhuhr":745,"asr":953,"maghrib":1120,"isha":1210},{"hm":3,"hd":25,"g":"2026-09-07","wd":0,"ram":0,"fajr":290,"shuruq":370,"dhuhr":744,"asr":952,"maghrib":1119,"isha":1209},{"hm":3,"hd":26,"g":"2026-09-08","wd":1,"ram":0,"fajr":291,"shuruq":370,"dhuhr":744,"asr":952,"maghrib":1118,"isha":1208},{"hm":3,"hd":27,"g":"2026-09-09","wd":2,"ram":0,"fajr":291,"shuruq":370,"dhuhr":744,"asr":952,"maghrib":1117,"isha":1207},{"hm":3,"hd":28,"g":"2026-09-10","wd":3,"ram":0,"fajr":292,"shuruq":371,"dhuhr":743,"asr":951,"maghrib":1116,"isha":1206},{"hm":3,"hd":29,"g":"2026-09-11","wd":4,"ram":0,"fajr":292,"shuruq":371,"dhuhr":743,"asr":951,"maghrib":1114,"isha":1204},{"hm":4,"hd":1,"g":"2026-09-12","wd":5,"ram":0,"fajr":293,"shuruq":371,"dhuhr":743,"asr":950,"maghrib":1113,"isha":1203},{"hm":4,"hd":2,"g":"2026-09-13","wd":6,"ram":0,"fajr":293,"shuruq":372,"dhuhr":742,"asr":950,"maghrib":1112,"isha":1202},{"hm":4,"hd":3,"g":"2026-09-14","wd":0,"ram":0,"fajr":294,"shuruq":372,"dhuhr":742,"asr":949,"maghrib":1111,"isha":1201},{"hm":4,"hd":4,"g":"2026-09-15","wd":1,"ram":0,"fajr":294,"shuruq":372,"dhuhr":742,"asr":949,"maghrib":1110,"isha":1200},{"hm":4,"hd":5,"g":"2026-09-16","wd":2,"ram":0,"fajr":294,"shuruq":373,"dhuhr":741,"asr":948,"maghrib":1109,"isha":1199},{"hm":4,"hd":6,"g":"2026-09-17","wd":3,"ram":0,"fajr":295,"shuruq":373,"dhuhr":741,"asr":948,"maghrib":1108,"isha":1198},{"hm":4,"hd":7,"g":"2026-09-18","wd":4,"ram":0,"fajr":295,"shuruq":373,"dhuhr":740,"asr":947,"maghrib":1107,"isha":1197},{"hm":4,"hd":8,"g":"2026-09-19","wd":5,"ram":0,"fajr":296,"shuruq":374,"dhuhr":740,"asr":947,"maghrib":1106,"isha":1196},{"hm":4,"hd":9,"g":"2026-09-20","wd":6,"ram":0,"fajr":296,"shuruq":374,"dhuhr":740,"asr":946,"maghrib":1105,"isha":1195},{"hm":4,"hd":10,"g":"2026-09-21","wd":0,"ram":0,"fajr":297,"shuruq":374,"dhuhr":739,"asr":946,"maghrib":1104,"isha":1194},{"hm":4,"hd":11,"g":"2026-09-22","wd":1,"ram":0,"fajr":297,"shuruq":375,"dhuhr":739,"asr":945,"maghrib":1103,"isha":1193},{"hm":4,"hd":12,"g":"2026-09-23","wd":2,"ram":0,"fajr":297,"shuruq":375,"dhuhr":739,"asr":945,"maghrib":1102,"isha":1192},{"hm":4,"hd":13,"g":"2026-09-24","wd":3,"ram":0,"fajr":298,"shuruq":376,"dhuhr":738,"asr":944,"maghrib":1101,"isha":1191},{"hm":4,"hd":14,"g":"2026-09-25","wd":4,"ram":0,"fajr":298,"shuruq":376,"dhuhr":738,"asr":943,"maghrib":1100,"isha":1190},{"hm":4,"hd":15,"g":"2026-09-26","wd":5,"ram":0,"fajr":299,"shuruq":376,"dhuhr":738,"asr":943,"maghrib":1099,"isha":1189},{"hm":4,"hd":16,"g":"2026-09-27","wd":6,"ram":0,"fajr":299,"shuruq":377,"dhuhr":737,"asr":942,"maghrib":1098,"isha":1188},{"hm":4,"hd":17,"g":"2026-09-28","wd":0,"ram":0,"fajr":299,"shuruq":377,"dhuhr":737,"asr":942,"maghrib":1097,"isha":1187},{"hm":4,"hd":18,"g":"2026-09-29","wd":1,"ram":0,"fajr":300,"shuruq":377,"dhuhr":737,"asr":941,"maghrib":1096,"isha":1186},{"hm":4,"hd":19,"g":"2026-09-30","wd":2,"ram":0,"fajr":300,"shuruq":378,"dhuhr":736,"asr":941,"maghrib":1094,"isha":1184},{"hm":4,"hd":20,"g":"2026-10-01","wd":3,"ram":0,"fajr":300,"shuruq":378,"dhuhr":736,"asr":940,"maghrib":1093,"isha":1183},{"hm":4,"hd":21,"g":"2026-10-02","wd":4,"ram":0,"fajr":301,"shuruq":378,"dhuhr":736,"asr":939,"maghrib":1092,"isha":1182},{"hm":4,"hd":22,"g":"2026-10-03","wd":5,"ram":0,"fajr":301,"shuruq":379,"dhuhr":735,"asr":939,"maghrib":1091,"isha":1181},{"hm":4,"hd":23,"g":"2026-10-04","wd":6,"ram":0,"fajr":302,"shuruq":379,"dhuhr":735,"asr":938,"maghrib":1090,"isha":1180},{"hm":4,"hd":24,"g":"2026-10-05","wd":0,"ram":0,"fajr":302,"shuruq":380,"dhuhr":735,"asr":938,"maghrib":1089,"isha":1179},{"hm":4,"hd":25,"g":"2026-10-06","wd":1,"ram":0,"fajr":302,"shuruq":380,"dhuhr":734,"asr":937,"maghrib":1088,"isha":1178},{"hm":4,"hd":26,"g":"2026-10-07","wd":2,"ram":0,"fajr":303,"shuruq":380,"dhuhr":734,"asr":936,"maghrib":1087,"isha":1177},{"hm":4,"hd":27,"g":"2026-10-08","wd":3,"ram":0,"fajr":303,"shuruq":381,"dhuhr":734,"asr":936,"maghrib":1086,"isha":1176},{"hm":4,"hd":28,"g":"2026-10-09","wd":4,"ram":0,"fajr":304,"shuruq":381,"dhuhr":734,"asr":935,"maghrib":1085,"isha":1175},{"hm":4,"hd":29,"g":"2026-10-10","wd":5,"ram":0,"fajr":304,"shuruq":382,"dhuhr":733,"asr":935,"maghrib":1085,"isha":1175},{"hm":4,"hd":30,"g":"2026-10-11","wd":6,"ram":0,"fajr":304,"shuruq":382,"dhuhr":733,"asr":934,"maghrib":1084,"isha":1174},{"hm":5,"hd":1,"g":"2026-10-12","wd":0,"ram":0,"fajr":305,"shuruq":383,"dhuhr":733,"asr":933,"maghrib":1083,"isha":1173},{"hm":5,"hd":2,"g":"2026-10-13","wd":1,"ram":0,"fajr":305,"shuruq":383,"dhuhr":733,"asr":933,"maghrib":1082,"isha":1172},{"hm":5,"hd":3,"g":"2026-10-14","wd":2,"ram":0,"fajr":306,"shuruq":383,"dhuhr":732,"asr":932,"maghrib":1081,"isha":1171},{"hm":5,"hd":4,"g":"2026-10-15","wd":3,"ram":0,"fajr":306,"shuruq":384,"dhuhr":732,"asr":932,"maghrib":1080,"isha":1170},{"hm":5,"hd":5,"g":"2026-10-16","wd":4,"ram":0,"fajr":306,"shuruq":384,"dhuhr":732,"asr":931,"maghrib":1079,"isha":1169},{"hm":5,"hd":6,"g":"2026-10-17","wd":5,"ram":0,"fajr":307,"shuruq":385,"dhuhr":732,"asr":930,"maghrib":1078,"isha":1168},{"hm":5,"hd":7,"g":"2026-10-18","wd":6,"ram":0,"fajr":307,"shuruq":385,"dhuhr":731,"asr":930,"maghrib":1077,"isha":1167},{"hm":5,"hd":8,"g":"2026-10-19","wd":0,"ram":0,"fajr":308,"shuruq":386,"dhuhr":731,"asr":929,"maghrib":1076,"isha":1166},{"hm":5,"hd":9,"g":"2026-10-20","wd":1,"ram":0,"fajr":308,"shuruq":386,"dhuhr":731,"asr":929,"maghrib":1076,"isha":1166},{"hm":5,"hd":10,"g":"2026-10-21","wd":2,"ram":0,"fajr":308,"shuruq":387,"dhuhr":731,"asr":928,"maghrib":1075,"isha":1165},{"hm":5,"hd":11,"g":"2026-10-22","wd":3,"ram":0,"fajr":309,"shuruq":387,"dhuhr":731,"asr":928,"maghrib":1074,"isha":1164},{"hm":5,"hd":12,"g":"2026-10-23","wd":4,"ram":0,"fajr":309,"shuruq":388,"dhuhr":731,"asr":927,"maghrib":1073,"isha":1163},{"hm":5,"hd":13,"g":"2026-10-24","wd":5,"ram":0,"fajr":310,"shuruq":388,"dhuhr":730,"asr":927,"maghrib":1072,"isha":1162},{"hm":5,"hd":14,"g":"2026-10-25","wd":6,"ram":0,"fajr":310,"shuruq":389,"dhuhr":730,"asr":926,"maghrib":1072,"isha":1162},{"hm":5,"hd":15,"g":"2026-10-26","wd":0,"ram":0,"fajr":311,"shuruq":389,"dhuhr":730,"asr":926,"maghrib":1071,"isha":1161},{"hm":5,"hd":16,"g":"2026-10-27","wd":1,"ram":0,"fajr":311,"shuruq":390,"dhuhr":730,"asr":925,"maghrib":1070,"isha":1160},{"hm":5,"hd":17,"g":"2026-10-28","wd":2,"ram":0,"fajr":312,"shuruq":390,"dhuhr":730,"asr":925,"maghrib":1069,"isha":1159},{"hm":5,"hd":18,"g":"2026-10-29","wd":3,"ram":0,"fajr":312,"shuruq":391,"dhuhr":730,"asr":924,"maghrib":1069,"isha":1159},{"hm":5,"hd":19,"g":"2026-10-30","wd":4,"ram":0,"fajr":313,"shuruq":392,"dhuhr":730,"asr":924,"maghrib":1068,"isha":1158},{"hm":5,"hd":20,"g":"2026-10-31","wd":5,"ram":0,"fajr":313,"shuruq":392,"dhuhr":730,"asr":923,"maghrib":1067,"isha":1157},{"hm":5,"hd":21,"g":"2026-11-01","wd":6,"ram":0,"fajr":313,"shuruq":393,"dhuhr":730,"asr":923,"maghrib":1067,"isha":1157},{"hm":5,"hd":22,"g":"2026-11-02","wd":0,"ram":0,"fajr":314,"shuruq":393,"dhuhr":730,"asr":922,"maghrib":1066,"isha":1156},{"hm":5,"hd":23,"g":"2026-11-03","wd":1,"ram":0,"fajr":314,"shuruq":394,"dhuhr":730,"asr":922,"maghrib":1065,"isha":1155},{"hm":5,"hd":24,"g":"2026-11-04","wd":2,"ram":0,"fajr":315,"shuruq":395,"dhuhr":730,"asr":921,"maghrib":1065,"isha":1155},{"hm":5,"hd":25,"g":"2026-11-05","wd":3,"ram":0,"fajr":315,"shuruq":395,"dhuhr":730,"asr":921,"maghrib":1064,"isha":1154},{"hm":5,"hd":26,"g":"2026-11-06","wd":4,"ram":0,"fajr":316,"shuruq":396,"dhuhr":730,"asr":921,"maghrib":1064,"isha":1154},{"hm":5,"hd":27,"g":"2026-11-07","wd":5,"ram":0,"fajr":316,"shuruq":396,"dhuhr":730,"asr":920,"maghrib":1063,"isha":1153},{"hm":5,"hd":28,"g":"2026-11-08","wd":6,"ram":0,"fajr":317,"shuruq":397,"dhuhr":730,"asr":920,"maghrib":1063,"isha":1153},{"hm":5,"hd":29,"g":"2026-11-09","wd":0,"ram":0,"fajr":318,"shuruq":398,"dhuhr":730,"asr":920,"maghrib":1062,"isha":1152},{"hm":5,"hd":30,"g":"2026-11-10","wd":1,"ram":0,"fajr":318,"shuruq":398,"dhuhr":730,"asr":919,"maghrib":1062,"isha":1152},{"hm":6,"hd":1,"g":"2026-11-11","wd":2,"ram":0,"fajr":319,"shuruq":399,"dhuhr":730,"asr":919,"maghrib":1061,"isha":1151},{"hm":6,"hd":2,"g":"2026-11-12","wd":3,"ram":0,"fajr":319,"shuruq":400,"dhuhr":730,"asr":919,"maghrib":1061,"isha":1151},{"hm":6,"hd":3,"g":"2026-11-13","wd":4,"ram":0,"fajr":320,"shuruq":400,"dhuhr":731,"asr":919,"maghrib":1061,"isha":1151},{"hm":6,"hd":4,"g":"2026-11-14","wd":5,"ram":0,"fajr":320,"shuruq":401,"dhuhr":731,"asr":918,"maghrib":1060,"isha":1150},{"hm":6,"hd":5,"g":"2026-11-15","wd":6,"ram":0,"fajr":321,"shuruq":402,"dhuhr":731,"asr":918,"maghrib":1060,"isha":1150},{"hm":6,"hd":6,"g":"2026-11-16","wd":0,"ram":0,"fajr":321,"shuruq":402,"dhuhr":731,"asr":918,"maghrib":1059,"isha":1149},{"hm":6,"hd":7,"g":"2026-11-17","wd":1,"ram":0,"fajr":322,"shuruq":403,"dhuhr":731,"asr":918,"maghrib":1059,"isha":1149},{"hm":6,"hd":8,"g":"2026-11-18","wd":2,"ram":0,"fajr":323,"shuruq":404,"dhuhr":731,"asr":918,"maghrib":1059,"isha":1149},{"hm":6,"hd":9,"g":"2026-11-19","wd":3,"ram":0,"fajr":323,"shuruq":404,"dhuhr":732,"asr":917,"maghrib":1059,"isha":1149},{"hm":6,"hd":10,"g":"2026-11-20","wd":4,"ram":0,"fajr":324,"shuruq":405,"dhuhr":732,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":11,"g":"2026-11-21","wd":5,"ram":0,"fajr":324,"shuruq":406,"dhuhr":732,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":12,"g":"2026-11-22","wd":6,"ram":0,"fajr":325,"shuruq":406,"dhuhr":732,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":13,"g":"2026-11-23","wd":0,"ram":0,"fajr":325,"shuruq":407,"dhuhr":733,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":14,"g":"2026-11-24","wd":1,"ram":0,"fajr":326,"shuruq":408,"dhuhr":733,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":15,"g":"2026-11-25","wd":2,"ram":0,"fajr":327,"shuruq":409,"dhuhr":733,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":16,"g":"2026-11-26","wd":3,"ram":0,"fajr":327,"shuruq":409,"dhuhr":734,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":17,"g":"2026-11-27","wd":4,"ram":0,"fajr":328,"shuruq":410,"dhuhr":734,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":18,"g":"2026-11-28","wd":5,"ram":0,"fajr":328,"shuruq":411,"dhuhr":734,"asr":917,"maghrib":1057,"isha":1147},{"hm":6,"hd":19,"g":"2026-11-29","wd":6,"ram":0,"fajr":329,"shuruq":411,"dhuhr":735,"asr":917,"maghrib":1057,"isha":1147},{"hm":6,"hd":20,"g":"2026-11-30","wd":0,"ram":0,"fajr":330,"shuruq":412,"dhuhr":735,"asr":917,"maghrib":1057,"isha":1147},{"hm":6,"hd":21,"g":"2026-12-01","wd":1,"ram":0,"fajr":330,"shuruq":413,"dhuhr":735,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":22,"g":"2026-12-02","wd":2,"ram":0,"fajr":331,"shuruq":413,"dhuhr":736,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":23,"g":"2026-12-03","wd":3,"ram":0,"fajr":332,"shuruq":414,"dhuhr":736,"asr":917,"maghrib":1058,"isha":1148},{"hm":6,"hd":24,"g":"2026-12-04","wd":4,"ram":0,"fajr":332,"shuruq":415,"dhuhr":736,"asr":918,"maghrib":1058,"isha":1148},{"hm":6,"hd":25,"g":"2026-12-05","wd":5,"ram":0,"fajr":333,"shuruq":416,"dhuhr":737,"asr":918,"maghrib":1058,"isha":1148},{"hm":6,"hd":26,"g":"2026-12-06","wd":6,"ram":0,"fajr":333,"shuruq":416,"dhuhr":737,"asr":918,"maghrib":1058,"isha":1148},{"hm":6,"hd":27,"g":"2026-12-07","wd":0,"ram":0,"fajr":334,"shuruq":417,"dhuhr":738,"asr":918,"maghrib":1058,"isha":1148},{"hm":6,"hd":28,"g":"2026-12-08","wd":1,"ram":0,"fajr":335,"shuruq":418,"dhuhr":738,"asr":918,"maghrib":1059,"isha":1149},{"hm":6,"hd":29,"g":"2026-12-09","wd":2,"ram":0,"fajr":335,"shuruq":418,"dhuhr":739,"asr":919,"maghrib":1059,"isha":1149},{"hm":7,"hd":1,"g":"2026-12-10","wd":3,"ram":0,"fajr":336,"shuruq":419,"dhuhr":739,"asr":919,"maghrib":1059,"isha":1149},{"hm":7,"hd":2,"g":"2026-12-11","wd":4,"ram":0,"fajr":336,"shuruq":420,"dhuhr":739,"asr":919,"maghrib":1059,"isha":1149},{"hm":7,"hd":3,"g":"2026-12-12","wd":5,"ram":0,"fajr":337,"shuruq":420,"dhuhr":740,"asr":920,"maghrib":1060,"isha":1150},{"hm":7,"hd":4,"g":"2026-12-13","wd":6,"ram":0,"fajr":337,"shuruq":421,"dhuhr":740,"asr":920,"maghrib":1060,"isha":1150},{"hm":7,"hd":5,"g":"2026-12-14","wd":0,"ram":0,"fajr":338,"shuruq":421,"dhuhr":741,"asr":920,"maghrib":1060,"isha":1150},{"hm":7,"hd":6,"g":"2026-12-15","wd":1,"ram":0,"fajr":339,"shuruq":422,"dhuhr":741,"asr":921,"maghrib":1061,"isha":1151},{"hm":7,"hd":7,"g":"2026-12-16","wd":2,"ram":0,"fajr":339,"shuruq":423,"dhuhr":742,"asr":921,"maghrib":1061,"isha":1151},{"hm":7,"hd":8,"g":"2026-12-17","wd":3,"ram":0,"fajr":340,"shuruq":423,"dhuhr":742,"asr":922,"maghrib":1061,"isha":1151},{"hm":7,"hd":9,"g":"2026-12-18","wd":4,"ram":0,"fajr":340,"shuruq":424,"dhuhr":743,"asr":922,"maghrib":1062,"isha":1152},{"hm":7,"hd":10,"g":"2026-12-19","wd":5,"ram":0,"fajr":341,"shuruq":424,"dhuhr":743,"asr":922,"maghrib":1062,"isha":1152},{"hm":7,"hd":11,"g":"2026-12-20","wd":6,"ram":0,"fajr":341,"shuruq":425,"dhuhr":744,"asr":923,"maghrib":1063,"isha":1153},{"hm":7,"hd":12,"g":"2026-12-21","wd":0,"ram":0,"fajr":342,"shuruq":425,"dhuhr":744,"asr":923,"maghrib":1063,"isha":1153},{"hm":7,"hd":13,"g":"2026-12-22","wd":1,"ram":0,"fajr":342,"shuruq":426,"dhuhr":745,"asr":924,"maghrib":1064,"isha":1154},{"hm":7,"hd":14,"g":"2026-12-23","wd":2,"ram":0,"fajr":343,"shuruq":426,"dhuhr":745,"asr":924,"maghrib":1064,"isha":1154},{"hm":7,"hd":15,"g":"2026-12-24","wd":3,"ram":0,"fajr":343,"shuruq":427,"dhuhr":746,"asr":925,"maghrib":1065,"isha":1155},{"hm":7,"hd":16,"g":"2026-12-25","wd":4,"ram":0,"fajr":344,"shuruq":427,"dhuhr":746,"asr":925,"maghrib":1065,"isha":1155},{"hm":7,"hd":17,"g":"2026-12-26","wd":5,"ram":0,"fajr":344,"shuruq":428,"dhuhr":747,"asr":926,"maghrib":1066,"isha":1156},{"hm":7,"hd":18,"g":"2026-12-27","wd":6,"ram":0,"fajr":345,"shuruq":428,"dhuhr":747,"asr":927,"maghrib":1067,"isha":1157},{"hm":7,"hd":19,"g":"2026-12-28","wd":0,"ram":0,"fajr":345,"shuruq":428,"dhuhr":748,"asr":927,"maghrib":1067,"isha":1157},{"hm":7,"hd":20,"g":"2026-12-29","wd":1,"ram":0,"fajr":345,"shuruq":429,"dhuhr":748,"asr":928,"maghrib":1068,"isha":1158},{"hm":7,"hd":21,"g":"2026-12-30","wd":2,"ram":0,"fajr":346,"shuruq":429,"dhuhr":749,"asr":928,"maghrib":1068,"isha":1158},{"hm":7,"hd":22,"g":"2026-12-31","wd":3,"ram":0,"fajr":346,"shuruq":429,"dhuhr":749,"asr":929,"maghrib":1069,"isha":1159},{"hm":7,"hd":23,"g":"2027-01-01","wd":4,"ram":0,"fajr":347,"shuruq":430,"dhuhr":750,"asr":930,"maghrib":1070,"isha":1160},{"hm":7,"hd":24,"g":"2027-01-02","wd":5,"ram":0,"fajr":347,"shuruq":430,"dhuhr":750,"asr":930,"maghrib":1070,"isha":1160},{"hm":7,"hd":25,"g":"2027-01-03","wd":6,"ram":0,"fajr":347,"shuruq":430,"dhuhr":751,"asr":931,"maghrib":1071,"isha":1161},{"hm":7,"hd":26,"g":"2027-01-04","wd":0,"ram":0,"fajr":348,"shuruq":431,"dhuhr":751,"asr":931,"maghrib":1072,"isha":1162},{"hm":7,"hd":27,"g":"2027-01-05","wd":1,"ram":0,"fajr":348,"shuruq":431,"dhuhr":752,"asr":932,"maghrib":1072,"isha":1162},{"hm":7,"hd":28,"g":"2027-01-06","wd":2,"ram":0,"fajr":348,"shuruq":431,"dhuhr":752,"asr":933,"maghrib":1073,"isha":1163},{"hm":7,"hd":29,"g":"2027-01-07","wd":3,"ram":0,"fajr":348,"shuruq":431,"dhuhr":752,"asr":933,"maghrib":1074,"isha":1164},{"hm":7,"hd":30,"g":"2027-01-08","wd":4,"ram":0,"fajr":349,"shuruq":431,"dhuhr":753,"asr":934,"maghrib":1074,"isha":1164},{"hm":8,"hd":1,"g":"2027-01-09","wd":5,"ram":0,"fajr":349,"shuruq":432,"dhuhr":753,"asr":935,"maghrib":1075,"isha":1165},{"hm":8,"hd":2,"g":"2027-01-10","wd":6,"ram":0,"fajr":349,"shuruq":432,"dhuhr":754,"asr":935,"maghrib":1076,"isha":1166},{"hm":8,"hd":3,"g":"2027-01-11","wd":0,"ram":0,"fajr":349,"shuruq":432,"dhuhr":754,"asr":936,"maghrib":1077,"isha":1167},{"hm":8,"hd":4,"g":"2027-01-12","wd":1,"ram":0,"fajr":349,"shuruq":432,"dhuhr":754,"asr":937,"maghrib":1077,"isha":1167},{"hm":8,"hd":5,"g":"2027-01-13","wd":2,"ram":0,"fajr":350,"shuruq":432,"dhuhr":755,"asr":937,"maghrib":1078,"isha":1168},{"hm":8,"hd":6,"g":"2027-01-14","wd":3,"ram":0,"fajr":350,"shuruq":432,"dhuhr":755,"asr":938,"maghrib":1079,"isha":1169},{"hm":8,"hd":7,"g":"2027-01-15","wd":4,"ram":0,"fajr":350,"shuruq":432,"dhuhr":756,"asr":939,"maghrib":1079,"isha":1169},{"hm":8,"hd":8,"g":"2027-01-16","wd":5,"ram":0,"fajr":350,"shuruq":432,"dhuhr":756,"asr":939,"maghrib":1080,"isha":1170},{"hm":8,"hd":9,"g":"2027-01-17","wd":6,"ram":0,"fajr":350,"shuruq":432,"dhuhr":756,"asr":940,"maghrib":1081,"isha":1171},{"hm":8,"hd":10,"g":"2027-01-18","wd":0,"ram":0,"fajr":350,"shuruq":432,"dhuhr":757,"asr":941,"maghrib":1082,"isha":1172},{"hm":8,"hd":11,"g":"2027-01-19","wd":1,"ram":0,"fajr":350,"shuruq":432,"dhuhr":757,"asr":941,"maghrib":1082,"isha":1172},{"hm":8,"hd":12,"g":"2027-01-20","wd":2,"ram":0,"fajr":350,"shuruq":431,"dhuhr":757,"asr":942,"maghrib":1083,"isha":1173},{"hm":8,"hd":13,"g":"2027-01-21","wd":3,"ram":0,"fajr":350,"shuruq":431,"dhuhr":757,"asr":943,"maghrib":1084,"isha":1174},{"hm":8,"hd":14,"g":"2027-01-22","wd":4,"ram":0,"fajr":350,"shuruq":431,"dhuhr":758,"asr":943,"maghrib":1085,"isha":1175},{"hm":8,"hd":15,"g":"2027-01-23","wd":5,"ram":0,"fajr":350,"shuruq":431,"dhuhr":758,"asr":944,"maghrib":1085,"isha":1175},{"hm":8,"hd":16,"g":"2027-01-24","wd":6,"ram":0,"fajr":350,"shuruq":431,"dhuhr":758,"asr":944,"maghrib":1086,"isha":1176},{"hm":8,"hd":17,"g":"2027-01-25","wd":0,"ram":0,"fajr":349,"shuruq":430,"dhuhr":758,"asr":945,"maghrib":1087,"isha":1177},{"hm":8,"hd":18,"g":"2027-01-26","wd":1,"ram":0,"fajr":349,"shuruq":430,"dhuhr":759,"asr":946,"maghrib":1088,"isha":1178},{"hm":8,"hd":19,"g":"2027-01-27","wd":2,"ram":0,"fajr":349,"shuruq":430,"dhuhr":759,"asr":946,"maghrib":1088,"isha":1178},{"hm":8,"hd":20,"g":"2027-01-28","wd":3,"ram":0,"fajr":349,"shuruq":430,"dhuhr":759,"asr":947,"maghrib":1089,"isha":1179},{"hm":8,"hd":21,"g":"2027-01-29","wd":4,"ram":0,"fajr":349,"shuruq":429,"dhuhr":759,"asr":947,"maghrib":1090,"isha":1180},{"hm":8,"hd":22,"g":"2027-01-30","wd":5,"ram":0,"fajr":348,"shuruq":429,"dhuhr":759,"asr":948,"maghrib":1090,"isha":1180},{"hm":8,"hd":23,"g":"2027-01-31","wd":6,"ram":0,"fajr":348,"shuruq":428,"dhuhr":760,"asr":949,"maghrib":1091,"isha":1181},{"hm":8,"hd":24,"g":"2027-02-01","wd":0,"ram":0,"fajr":348,"shuruq":428,"dhuhr":760,"asr":949,"maghrib":1092,"isha":1182},{"hm":8,"hd":25,"g":"2027-02-02","wd":1,"ram":0,"fajr":348,"shuruq":428,"dhuhr":760,"asr":950,"maghrib":1093,"isha":1183},{"hm":8,"hd":26,"g":"2027-02-03","wd":2,"ram":0,"fajr":347,"shuruq":427,"dhuhr":760,"asr":950,"maghrib":1093,"isha":1183},{"hm":8,"hd":27,"g":"2027-02-04","wd":3,"ram":0,"fajr":347,"shuruq":427,"dhuhr":760,"asr":951,"maghrib":1094,"isha":1184},{"hm":8,"hd":28,"g":"2027-02-05","wd":4,"ram":0,"fajr":346,"shuruq":426,"dhuhr":760,"asr":951,"maghrib":1095,"isha":1185},{"hm":8,"hd":29,"g":"2027-02-06","wd":5,"ram":0,"fajr":346,"shuruq":426,"dhuhr":760,"asr":952,"maghrib":1095,"isha":1185},{"hm":8,"hd":30,"g":"2027-02-07","wd":6,"ram":0,"fajr":346,"shuruq":425,"dhuhr":760,"asr":952,"maghrib":1096,"isha":1186},{"hm":9,"hd":1,"g":"2027-02-08","wd":0,"ram":1,"fajr":345,"shuruq":425,"dhuhr":760,"asr":953,"maghrib":1097,"isha":1217},{"hm":9,"hd":2,"g":"2027-02-09","wd":1,"ram":1,"fajr":345,"shuruq":424,"dhuhr":760,"asr":953,"maghrib":1097,"isha":1217},{"hm":9,"hd":3,"g":"2027-02-10","wd":2,"ram":1,"fajr":344,"shuruq":423,"dhuhr":760,"asr":954,"maghrib":1098,"isha":1218},{"hm":9,"hd":4,"g":"2027-02-11","wd":3,"ram":1,"fajr":344,"shuruq":423,"dhuhr":760,"asr":954,"maghrib":1098,"isha":1218},{"hm":9,"hd":5,"g":"2027-02-12","wd":4,"ram":1,"fajr":343,"shuruq":422,"dhuhr":760,"asr":954,"maghrib":1099,"isha":1219},{"hm":9,"hd":6,"g":"2027-02-13","wd":5,"ram":1,"fajr":343,"shuruq":422,"dhuhr":760,"asr":955,"maghrib":1100,"isha":1220},{"hm":9,"hd":7,"g":"2027-02-14","wd":6,"ram":1,"fajr":342,"shuruq":421,"dhuhr":760,"asr":955,"maghrib":1100,"isha":1220},{"hm":9,"hd":8,"g":"2027-02-15","wd":0,"ram":1,"fajr":341,"shuruq":420,"dhuhr":760,"asr":956,"maghrib":1101,"isha":1221},{"hm":9,"hd":9,"g":"2027-02-16","wd":1,"ram":1,"fajr":341,"shuruq":419,"dhuhr":760,"asr":956,"maghrib":1102,"isha":1222},{"hm":9,"hd":10,"g":"2027-02-17","wd":2,"ram":1,"fajr":340,"shuruq":419,"dhuhr":760,"asr":956,"maghrib":1102,"isha":1222},{"hm":9,"hd":11,"g":"2027-02-18","wd":3,"ram":1,"fajr":340,"shuruq":418,"dhuhr":760,"asr":957,"maghrib":1103,"isha":1223},{"hm":9,"hd":12,"g":"2027-02-19","wd":4,"ram":1,"fajr":339,"shuruq":417,"dhuhr":760,"asr":957,"maghrib":1103,"isha":1223},{"hm":9,"hd":13,"g":"2027-02-20","wd":5,"ram":1,"fajr":338,"shuruq":417,"dhuhr":760,"asr":957,"maghrib":1104,"isha":1224},{"hm":9,"hd":14,"g":"2027-02-21","wd":6,"ram":1,"fajr":337,"shuruq":416,"dhuhr":760,"asr":957,"maghrib":1104,"isha":1224},{"hm":9,"hd":15,"g":"2027-02-22","wd":0,"ram":1,"fajr":337,"shuruq":415,"dhuhr":760,"asr":958,"maghrib":1105,"isha":1225},{"hm":9,"hd":16,"g":"2027-02-23","wd":1,"ram":1,"fajr":336,"shuruq":414,"dhuhr":760,"asr":958,"maghrib":1105,"isha":1225},{"hm":9,"hd":17,"g":"2027-02-24","wd":2,"ram":1,"fajr":335,"shuruq":413,"dhuhr":759,"asr":958,"maghrib":1106,"isha":1226},{"hm":9,"hd":18,"g":"2027-02-25","wd":3,"ram":1,"fajr":334,"shuruq":412,"dhuhr":759,"asr":958,"maghrib":1107,"isha":1227},{"hm":9,"hd":19,"g":"2027-02-26","wd":4,"ram":1,"fajr":334,"shuruq":412,"dhuhr":759,"asr":959,"maghrib":1107,"isha":1227},{"hm":9,"hd":20,"g":"2027-02-27","wd":5,"ram":1,"fajr":333,"shuruq":411,"dhuhr":759,"asr":959,"maghrib":1108,"isha":1228},{"hm":9,"hd":21,"g":"2027-02-28","wd":6,"ram":1,"fajr":332,"shuruq":410,"dhuhr":759,"asr":959,"maghrib":1108,"isha":1228},{"hm":9,"hd":22,"g":"2027-03-01","wd":0,"ram":1,"fajr":331,"shuruq":409,"dhuhr":759,"asr":959,"maghrib":1109,"isha":1229},{"hm":9,"hd":23,"g":"2027-03-02","wd":1,"ram":1,"fajr":330,"shuruq":408,"dhuhr":758,"asr":959,"maghrib":1109,"isha":1229},{"hm":9,"hd":24,"g":"2027-03-03","wd":2,"ram":1,"fajr":330,"shuruq":407,"dhuhr":758,"asr":959,"maghrib":1110,"isha":1230},{"hm":9,"hd":25,"g":"2027-03-04","wd":3,"ram":1,"fajr":329,"shuruq":406,"dhuhr":758,"asr":960,"maghrib":1110,"isha":1230},{"hm":9,"hd":26,"g":"2027-03-05","wd":4,"ram":1,"fajr":328,"shuruq":405,"dhuhr":758,"asr":960,"maghrib":1111,"isha":1231},{"hm":9,"hd":27,"g":"2027-03-06","wd":5,"ram":1,"fajr":327,"shuruq":404,"dhuhr":758,"asr":960,"maghrib":1111,"isha":1231},{"hm":9,"hd":28,"g":"2027-03-07","wd":6,"ram":1,"fajr":326,"shuruq":404,"dhuhr":757,"asr":960,"maghrib":1112,"isha":1232},{"hm":9,"hd":29,"g":"2027-03-08","wd":0,"ram":1,"fajr":325,"shuruq":403,"dhuhr":757,"asr":960,"maghrib":1112,"isha":1232},{"hm":10,"hd":1,"g":"2027-03-09","wd":1,"ram":0,"fajr":324,"shuruq":402,"dhuhr":757,"asr":960,"maghrib":1112,"isha":1202},{"hm":10,"hd":2,"g":"2027-03-10","wd":2,"ram":0,"fajr":323,"shuruq":401,"dhuhr":757,"asr":960,"maghrib":1113,"isha":1203},{"hm":10,"hd":3,"g":"2027-03-11","wd":3,"ram":0,"fajr":322,"shuruq":400,"dhuhr":756,"asr":960,"maghrib":1113,"isha":1203},{"hm":10,"hd":4,"g":"2027-03-12","wd":4,"ram":0,"fajr":321,"shuruq":399,"dhuhr":756,"asr":960,"maghrib":1114,"isha":1204},{"hm":10,"hd":5,"g":"2027-03-13","wd":5,"ram":0,"fajr":320,"shuruq":398,"dhuhr":756,"asr":960,"maghrib":1114,"isha":1204},{"hm":10,"hd":6,"g":"2027-03-14","wd":6,"ram":0,"fajr":319,"shuruq":397,"dhuhr":756,"asr":960,"maghrib":1115,"isha":1205},{"hm":10,"hd":7,"g":"2027-03-15","wd":0,"ram":0,"fajr":318,"shuruq":396,"dhuhr":755,"asr":960,"maghrib":1115,"isha":1205},{"hm":10,"hd":8,"g":"2027-03-16","wd":1,"ram":0,"fajr":317,"shuruq":395,"dhuhr":755,"asr":960,"maghrib":1116,"isha":1206},{"hm":10,"hd":9,"g":"2027-03-17","wd":2,"ram":0,"fajr":316,"shuruq":394,"dhuhr":755,"asr":960,"maghrib":1116,"isha":1206},{"hm":10,"hd":10,"g":"2027-03-18","wd":3,"ram":0,"fajr":315,"shuruq":393,"dhuhr":754,"asr":960,"maghrib":1116,"isha":1206},{"hm":10,"hd":11,"g":"2027-03-19","wd":4,"ram":0,"fajr":314,"shuruq":392,"dhuhr":754,"asr":960,"maghrib":1117,"isha":1207},{"hm":10,"hd":12,"g":"2027-03-20","wd":5,"ram":0,"fajr":313,"shuruq":391,"dhuhr":754,"asr":960,"maghrib":1117,"isha":1207},{"hm":10,"hd":13,"g":"2027-03-21","wd":6,"ram":0,"fajr":312,"shuruq":390,"dhuhr":754,"asr":960,"maghrib":1118,"isha":1208},{"hm":10,"hd":14,"g":"2027-03-22","wd":0,"ram":0,"fajr":311,"shuruq":389,"dhuhr":753,"asr":960,"maghrib":1118,"isha":1208},{"hm":10,"hd":15,"g":"2027-03-23","wd":1,"ram":0,"fajr":310,"shuruq":388,"dhuhr":753,"asr":959,"maghrib":1119,"isha":1209},{"hm":10,"hd":16,"g":"2027-03-24","wd":2,"ram":0,"fajr":309,"shuruq":387,"dhuhr":753,"asr":959,"maghrib":1119,"isha":1209},{"hm":10,"hd":17,"g":"2027-03-25","wd":3,"ram":0,"fajr":308,"shuruq":386,"dhuhr":752,"asr":959,"maghrib":1119,"isha":1209},{"hm":10,"hd":18,"g":"2027-03-26","wd":4,"ram":0,"fajr":307,"shuruq":385,"dhuhr":752,"asr":959,"maghrib":1120,"isha":1210},{"hm":10,"hd":19,"g":"2027-03-27","wd":5,"ram":0,"fajr":305,"shuruq":384,"dhuhr":752,"asr":959,"maghrib":1120,"isha":1210},{"hm":10,"hd":20,"g":"2027-03-28","wd":6,"ram":0,"fajr":304,"shuruq":383,"dhuhr":751,"asr":959,"maghrib":1121,"isha":1211},{"hm":10,"hd":21,"g":"2027-03-29","wd":0,"ram":0,"fajr":303,"shuruq":382,"dhuhr":751,"asr":959,"maghrib":1121,"isha":1211},{"hm":10,"hd":22,"g":"2027-03-30","wd":1,"ram":0,"fajr":302,"shuruq":381,"dhuhr":751,"asr":958,"maghrib":1121,"isha":1211},{"hm":10,"hd":23,"g":"2027-03-31","wd":2,"ram":0,"fajr":301,"shuruq":380,"dhuhr":751,"asr":958,"maghrib":1122,"isha":1212},{"hm":10,"hd":24,"g":"2027-04-01","wd":3,"ram":0,"fajr":300,"shuruq":379,"dhuhr":750,"asr":958,"maghrib":1122,"isha":1212},{"hm":10,"hd":25,"g":"2027-04-02","wd":4,"ram":0,"fajr":299,"shuruq":378,"dhuhr":750,"asr":958,"maghrib":1123,"isha":1213},{"hm":10,"hd":26,"g":"2027-04-03","wd":5,"ram":0,"fajr":298,"shuruq":377,"dhuhr":750,"asr":958,"maghrib":1123,"isha":1213},{"hm":10,"hd":27,"g":"2027-04-04","wd":6,"ram":0,"fajr":297,"shuruq":376,"dhuhr":749,"asr":957,"maghrib":1123,"isha":1213},{"hm":10,"hd":28,"g":"2027-04-05","wd":0,"ram":0,"fajr":296,"shuruq":375,"dhuhr":749,"asr":957,"maghrib":1124,"isha":1214},{"hm":10,"hd":29,"g":"2027-04-06","wd":1,"ram":0,"fajr":294,"shuruq":374,"dhuhr":749,"asr":957,"maghrib":1124,"isha":1214},{"hm":10,"hd":30,"g":"2027-04-07","wd":2,"ram":0,"fajr":293,"shuruq":373,"dhuhr":749,"asr":957,"maghrib":1125,"isha":1215},{"hm":11,"hd":1,"g":"2027-04-08","wd":3,"ram":0,"fajr":292,"shuruq":372,"dhuhr":748,"asr":956,"maghrib":1125,"isha":1215},{"hm":11,"hd":2,"g":"2027-04-09","wd":4,"ram":0,"fajr":291,"shuruq":371,"dhuhr":748,"asr":956,"maghrib":1126,"isha":1216},{"hm":11,"hd":3,"g":"2027-04-10","wd":5,"ram":0,"fajr":290,"shuruq":370,"dhuhr":748,"asr":956,"maghrib":1126,"isha":1216},{"hm":11,"hd":4,"g":"2027-04-11","wd":6,"ram":0,"fajr":289,"shuruq":369,"dhuhr":747,"asr":956,"maghrib":1126,"isha":1216},{"hm":11,"hd":5,"g":"2027-04-12","wd":0,"ram":0,"fajr":288,"shuruq":368,"dhuhr":747,"asr":955,"maghrib":1127,"isha":1217},{"hm":11,"hd":6,"g":"2027-04-13","wd":1,"ram":0,"fajr":287,"shuruq":367,"dhuhr":747,"asr":955,"maghrib":1127,"isha":1217},{"hm":11,"hd":7,"g":"2027-04-14","wd":2,"ram":0,"fajr":286,"shuruq":366,"dhuhr":747,"asr":955,"maghrib":1128,"isha":1218},{"hm":11,"hd":8,"g":"2027-04-15","wd":3,"ram":0,"fajr":285,"shuruq":365,"dhuhr":746,"asr":955,"maghrib":1128,"isha":1218},{"hm":11,"hd":9,"g":"2027-04-16","wd":4,"ram":0,"fajr":284,"shuruq":364,"dhuhr":746,"asr":954,"maghrib":1128,"isha":1218},{"hm":11,"hd":10,"g":"2027-04-17","wd":5,"ram":0,"fajr":282,"shuruq":363,"dhuhr":746,"asr":954,"maghrib":1129,"isha":1219},{"hm":11,"hd":11,"g":"2027-04-18","wd":6,"ram":0,"fajr":281,"shuruq":362,"dhuhr":746,"asr":954,"maghrib":1129,"isha":1219},{"hm":11,"hd":12,"g":"2027-04-19","wd":0,"ram":0,"fajr":280,"shuruq":361,"dhuhr":745,"asr":954,"maghrib":1130,"isha":1220},{"hm":11,"hd":13,"g":"2027-04-20","wd":1,"ram":0,"fajr":279,"shuruq":361,"dhuhr":745,"asr":953,"maghrib":1130,"isha":1220},{"hm":11,"hd":14,"g":"2027-04-21","wd":2,"ram":0,"fajr":278,"shuruq":360,"dhuhr":745,"asr":953,"maghrib":1131,"isha":1221},{"hm":11,"hd":15,"g":"2027-04-22","wd":3,"ram":0,"fajr":277,"shuruq":359,"dhuhr":745,"asr":953,"maghrib":1131,"isha":1221},{"hm":11,"hd":16,"g":"2027-04-23","wd":4,"ram":0,"fajr":276,"shuruq":358,"dhuhr":745,"asr":953,"maghrib":1132,"isha":1222},{"hm":11,"hd":17,"g":"2027-04-24","wd":5,"ram":0,"fajr":275,"shuruq":357,"dhuhr":744,"asr":952,"maghrib":1132,"isha":1222},{"hm":11,"hd":18,"g":"2027-04-25","wd":6,"ram":0,"fajr":274,"shuruq":356,"dhuhr":744,"asr":952,"maghrib":1132,"isha":1222},{"hm":11,"hd":19,"g":"2027-04-26","wd":0,"ram":0,"fajr":273,"shuruq":356,"dhuhr":744,"asr":952,"maghrib":1133,"isha":1223},{"hm":11,"hd":20,"g":"2027-04-27","wd":1,"ram":0,"fajr":272,"shuruq":355,"dhuhr":744,"asr":951,"maghrib":1133,"isha":1223},{"hm":11,"hd":21,"g":"2027-04-28","wd":2,"ram":0,"fajr":271,"shuruq":354,"dhuhr":744,"asr":951,"maghrib":1134,"isha":1224},{"hm":11,"hd":22,"g":"2027-04-29","wd":3,"ram":0,"fajr":270,"shuruq":353,"dhuhr":744,"asr":951,"maghrib":1134,"isha":1224},{"hm":11,"hd":23,"g":"2027-04-30","wd":4,"ram":0,"fajr":269,"shuruq":353,"dhuhr":744,"asr":951,"maghrib":1135,"isha":1225},{"hm":11,"hd":24,"g":"2027-05-01","wd":5,"ram":0,"fajr":268,"shuruq":352,"dhuhr":743,"asr":950,"maghrib":1135,"isha":1225},{"hm":11,"hd":25,"g":"2027-05-02","wd":6,"ram":0,"fajr":267,"shuruq":351,"dhuhr":743,"asr":950,"maghrib":1136,"isha":1226},{"hm":11,"hd":26,"g":"2027-05-03","wd":0,"ram":0,"fajr":267,"shuruq":350,"dhuhr":743,"asr":950,"maghrib":1136,"isha":1226},{"hm":11,"hd":27,"g":"2027-05-04","wd":1,"ram":0,"fajr":266,"shuruq":350,"dhuhr":743,"asr":950,"maghrib":1137,"isha":1227},{"hm":11,"hd":28,"g":"2027-05-05","wd":2,"ram":0,"fajr":265,"shuruq":349,"dhuhr":743,"asr":949,"maghrib":1137,"isha":1227},{"hm":11,"hd":29,"g":"2027-05-06","wd":3,"ram":0,"fajr":264,"shuruq":348,"dhuhr":743,"asr":949,"maghrib":1138,"isha":1228},{"hm":12,"hd":1,"g":"2027-05-07","wd":4,"ram":0,"fajr":263,"shuruq":348,"dhuhr":743,"asr":949,"maghrib":1138,"isha":1228},{"hm":12,"hd":2,"g":"2027-05-08","wd":5,"ram":0,"fajr":262,"shuruq":347,"dhuhr":743,"asr":949,"maghrib":1139,"isha":1229},{"hm":12,"hd":3,"g":"2027-05-09","wd":6,"ram":0,"fajr":261,"shuruq":347,"dhuhr":743,"asr":948,"maghrib":1139,"isha":1229},{"hm":12,"hd":4,"g":"2027-05-10","wd":0,"ram":0,"fajr":261,"shuruq":346,"dhuhr":743,"asr":948,"maghrib":1140,"isha":1230},{"hm":12,"hd":5,"g":"2027-05-11","wd":1,"ram":0,"fajr":260,"shuruq":345,"dhuhr":743,"asr":948,"maghrib":1140,"isha":1230},{"hm":12,"hd":6,"g":"2027-05-12","wd":2,"ram":0,"fajr":259,"shuruq":345,"dhuhr":743,"asr":948,"maghrib":1141,"isha":1231},{"hm":12,"hd":7,"g":"2027-05-13","wd":3,"ram":0,"fajr":258,"shuruq":344,"dhuhr":743,"asr":948,"maghrib":1141,"isha":1231},{"hm":12,"hd":8,"g":"2027-05-14","wd":4,"ram":0,"fajr":258,"shuruq":344,"dhuhr":743,"asr":947,"maghrib":1142,"isha":1232},{"hm":12,"hd":9,"g":"2027-05-15","wd":5,"ram":0,"fajr":257,"shuruq":343,"dhuhr":743,"asr":947,"maghrib":1142,"isha":1232},{"hm":12,"hd":10,"g":"2027-05-16","wd":6,"ram":0,"fajr":256,"shuruq":343,"dhuhr":743,"asr":947,"maghrib":1143,"isha":1233},{"hm":12,"hd":11,"g":"2027-05-17","wd":0,"ram":0,"fajr":256,"shuruq":342,"dhuhr":743,"asr":947,"maghrib":1143,"isha":1233},{"hm":12,"hd":12,"g":"2027-05-18","wd":1,"ram":0,"fajr":255,"shuruq":342,"dhuhr":743,"asr":947,"maghrib":1144,"isha":1234},{"hm":12,"hd":13,"g":"2027-05-19","wd":2,"ram":0,"fajr":254,"shuruq":342,"dhuhr":743,"asr":947,"maghrib":1144,"isha":1234},{"hm":12,"hd":14,"g":"2027-05-20","wd":3,"ram":0,"fajr":254,"shuruq":341,"dhuhr":743,"asr":946,"maghrib":1145,"isha":1235},{"hm":12,"hd":15,"g":"2027-05-21","wd":4,"ram":0,"fajr":253,"shuruq":341,"dhuhr":743,"asr":946,"maghrib":1145,"isha":1235},{"hm":12,"hd":16,"g":"2027-05-22","wd":5,"ram":0,"fajr":253,"shuruq":340,"dhuhr":743,"asr":946,"maghrib":1146,"isha":1236},{"hm":12,"hd":17,"g":"2027-05-23","wd":6,"ram":0,"fajr":252,"shuruq":340,"dhuhr":743,"asr":946,"maghrib":1146,"isha":1236},{"hm":12,"hd":18,"g":"2027-05-24","wd":0,"ram":0,"fajr":252,"shuruq":340,"dhuhr":743,"asr":946,"maghrib":1147,"isha":1237},{"hm":12,"hd":19,"g":"2027-05-25","wd":1,"ram":0,"fajr":251,"shuruq":339,"dhuhr":743,"asr":946,"maghrib":1147,"isha":1237},{"hm":12,"hd":20,"g":"2027-05-26","wd":2,"ram":0,"fajr":251,"shuruq":339,"dhuhr":743,"asr":946,"maghrib":1148,"isha":1238},{"hm":12,"hd":21,"g":"2027-05-27","wd":3,"ram":0,"fajr":250,"shuruq":339,"dhuhr":743,"asr":946,"maghrib":1148,"isha":1238},{"hm":12,"hd":22,"g":"2027-05-28","wd":4,"ram":0,"fajr":250,"shuruq":339,"dhuhr":744,"asr":946,"maghrib":1149,"isha":1239},{"hm":12,"hd":23,"g":"2027-05-29","wd":5,"ram":0,"fajr":249,"shuruq":338,"dhuhr":744,"asr":946,"maghrib":1149,"isha":1239},{"hm":12,"hd":24,"g":"2027-05-30","wd":6,"ram":0,"fajr":249,"shuruq":338,"dhuhr":744,"asr":946,"maghrib":1149,"isha":1239},{"hm":12,"hd":25,"g":"2027-05-31","wd":0,"ram":0,"fajr":249,"shuruq":338,"dhuhr":744,"asr":946,"maghrib":1150,"isha":1240},{"hm":12,"hd":26,"g":"2027-06-01","wd":1,"ram":0,"fajr":248,"shuruq":338,"dhuhr":744,"asr":946,"maghrib":1150,"isha":1240},{"hm":12,"hd":27,"g":"2027-06-02","wd":2,"ram":0,"fajr":248,"shuruq":338,"dhuhr":744,"asr":946,"maghrib":1151,"isha":1241},{"hm":12,"hd":28,"g":"2027-06-03","wd":3,"ram":0,"fajr":248,"shuruq":338,"dhuhr":744,"asr":946,"maghrib":1151,"isha":1241},{"hm":12,"hd":29,"g":"2027-06-04","wd":4,"ram":0,"fajr":248,"shuruq":338,"dhuhr":745,"asr":946,"maghrib":1152,"isha":1242},{"hm":12,"hd":30,"g":"2027-06-05","wd":5,"ram":0,"fajr":247,"shuruq":337,"dhuhr":745,"asr":946,"maghrib":1152,"isha":1242}];
+const IQAMA = {fajr:25, dhuhr:20, asr:20, maghrib:10, isha:20};
+const HMONTHS = ["محرّم","صفر","ربيع الأول","ربيع الآخر","جمادى الأولى","جمادى الآخرة","رجب","شعبان","رمضان","شوّال","ذو القعدة","ذو الحجّة"];
+const WD = ["الإثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت","الأحد"]; // 0=Mon
+const GMON = ["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+const PR = [["fajr","الفجر"],["shuruq","الشروق"],["dhuhr","الظهر"],["asr","العصر"],["maghrib","المغرب"],["isha","العشاء"]];
+
+const toAr = s => String(s).replace(/[0-9]/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const pad = n => String(n).padStart(2,"0");
+function f12(min){ // minutes -> "h:mm" latin 12h
+  min=((min%1440)+1440)%1440; let h=Math.floor(min/60), m=min%60;
+  let hh=h%12; if(hh===0) hh=12; return hh+":"+pad(m);
+}
+function gFmt(iso){const [y,mo,d]=iso.split("-").map(Number); return d+" "+GMON[mo-1]+" "+y;}
+
+// today lookup
+const todayISO = new Date().toLocaleDateString("en-CA",{timeZone:"Asia/Riyadh"}); // YYYY-MM-DD in KSA
+let todayRec = DATA.find(r=>r.g===todayISO);
+let activeMonth = todayRec ? todayRec.hm : 1;
+
+/* ---- render month tabs ---- */
+const monthsEl = document.getElementById("months");
+HMONTHS.forEach((nm,i)=>{
+  const b=document.createElement("button");
+  b.className="mtab"; b.textContent=nm; b.dataset.m=i+1;
+  b.onclick=()=>{activeMonth=i+1; renderMonth(); syncTabs();};
+  monthsEl.appendChild(b);
+});
+function syncTabs(){
+  [...monthsEl.children].forEach(b=>b.classList.toggle("active",+b.dataset.m===activeMonth));
+  const a=monthsEl.querySelector(".active"); if(a) a.scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});
+}
+
+/* ---- render table ---- */
+function cell(min, off){
+  if(off==null) return `<td class="t shuruq"><span class="adhan">${f12(min)}</span></td>`;
+  return `<td class="t"><span class="adhan">${f12(min)}</span><span class="iq">إقامة ${f12(min+off)}</span></td>`;
+}
+function renderMonth(){
+  const rows=DATA.filter(r=>r.hm===activeMonth);
+  document.getElementById("mTitle").textContent=HMONTHS[activeMonth-1]+" ١٤٤٨";
+  document.getElementById("mRange").textContent = rows.length ? (gFmt(rows[0].g)+" — "+gFmt(rows[rows.length-1].g)) : "";
+  const tb=document.getElementById("tbody"); tb.innerHTML="";
+  rows.forEach(r=>{
+    const tr=document.createElement("tr");
+    if(r.wd===4) tr.classList.add("fri");
+    if(r.g===todayISO) tr.classList.add("today");
+    tr.innerHTML=`<td class="c-h">${toAr(r.hd)}</td><td class="c-wd">${WD[r.wd]}</td><td class="c-g">${gFmt(r.g)}</td>`
+      + cell(r.fajr,IQAMA.fajr)+cell(r.shuruq,null)+cell(r.dhuhr,IQAMA.dhuhr)
+      + cell(r.asr,IQAMA.asr)+cell(r.maghrib,IQAMA.maghrib)+cell(r.isha,IQAMA.isha);
+    tb.appendChild(tr);
+  });
+}
+
+/* ---- today card ---- */
+const ARC_START=0, ARC_END=1440;
+function pct(min){return (min/1440)*100;}
+function buildToday(){
+  const rec = todayRec || DATA[0];
+  document.getElementById("arDate").textContent = `${WD[rec.wd]} ${toAr(rec.hd)} ${HMONTHS[rec.hm-1]} ١٤٤٨ هـ`;
+  document.getElementById("gDate").textContent = gFmt(rec.g) + (todayRec? "" : "  ·  (عرض — اليوم خارج السنة ١٤٤٨)");
+  // arc markers
+  const arc=document.getElementById("arc");
+  PR.forEach(([k,nm])=>{
+    const m=document.createElement("div"); m.className="mk"; m.style.left=pct(rec[k])+"%";
+    m.innerHTML=`<i></i><span class="ml">${nm}</span>`; arc.appendChild(m);
+  });
+  // chips
+  const chips=document.getElementById("chips"); chips.innerHTML="";
+  PR.forEach(([k,nm])=>{
+    const off=IQAMA[k];
+    const c=document.createElement("div"); c.className="chip"+(k==="shuruq"?" shuruq":""); c.dataset.k=k;
+    c.innerHTML=`<div class="cnm">${nm}</div><div class="cad num">${f12(rec[k])}</div>`+
+      (off!=null?`<div class="ciq num">إقامة ${f12(rec[k]+off)}</div>`:`<div class="ciq">—</div>`);
+    chips.appendChild(c);
+  });
+  // iqama footer chips
+  const il=document.getElementById("iqList");
+  [["الفجر",IQAMA.fajr],["الظهر",IQAMA.dhuhr],["العصر",IQAMA.asr],["المغرب",IQAMA.maghrib],["العشاء",IQAMA.isha]]
+    .forEach(([n,v])=>{const s=document.createElement("span"); s.innerHTML=`${n} <b class="num">+${toAr(v)}</b>`; il.appendChild(s);});
+}
+
+const FARD=[["fajr","الفجر"],["dhuhr","الظهر"],["asr","العصر"],["maghrib","المغرب"],["isha","العشاء"]];
+function nowMinKSA(){
+  const p=new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Riyadh",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false}).formatToParts(new Date());
+  const g=t=>+p.find(x=>x.type===t).value; let h=g("hour"); if(h===24)h=0;
+  return h*60+g("minute")+g("second")/60;
+}
+const RING_R=20, RING_C=2*Math.PI*RING_R;
+function tick(){
+  const rec=todayRec;
+  const sun=document.getElementById("sun"), nl=document.getElementById("nowline");
+  const cd=document.getElementById("countdown"), nn=document.getElementById("nextName"), ring=document.getElementById("ring");
+  if(!rec){ cd.textContent="—"; nn.textContent="—"; return; }
+  const now=nowMinKSA();
+  sun.style.left=pct(now)+"%"; nl.style.left=pct(now)+"%";
+
+  // current fard = latest whose adhan has passed today
+  let curK=null;
+  for(const [k] of FARD){ if(now>=rec[k]) curK=k; }
+  document.querySelectorAll(".chip").forEach(c=>c.classList.toggle("active",c.dataset.k===curK));
+
+  // prev / next boundaries (absolute minutes; next may roll past 1440)
+  let prev=0, nextAbs=null, nextNm="الفجر";
+  for(const [k,nm] of FARD){
+    if(rec[k]>now){ nextAbs=rec[k]; nextNm=nm; break; }
+    prev=rec[k];
+  }
+  if(nextAbs===null){
+    const i=DATA.indexOf(rec), nx=DATA[i+1];
+    nextAbs=(nx?nx.fajr:rec.fajr)+1440; nextNm="الفجر"+(nx?" · غدًا":""); prev=rec.isha;
+  }
+  if(now<rec.fajr){ prev=0; } // before first prayer: window from midnight
+
+  nn.textContent=nextNm;
+  const secs=Math.max(0,Math.round((nextAbs-now)*60));
+  cd.textContent=`${pad(Math.floor(secs/3600))}:${pad(Math.floor(secs%3600/60))}:${pad(secs%60)}`;
+
+  const total=(nextAbs-prev)||1, elapsed=Math.min(total,Math.max(0,now-prev));
+  ring.style.strokeDasharray=RING_C;
+  ring.style.strokeDashoffset=RING_C*(1-elapsed/total);
+}
+
+buildToday(); renderMonth(); syncTabs(); tick();
+setInterval(tick,1000);
+</script>
+</body>
+</html>
